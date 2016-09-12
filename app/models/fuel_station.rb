@@ -20,6 +20,7 @@ class FuelStation < OpenStruct
   end
 
   def self.format_fuel_type(type_codes)
+    return type_codes if type_codes.is_a?(String)
     type_codes.split(',').map do |type|
       fuel_types[type]
     end
