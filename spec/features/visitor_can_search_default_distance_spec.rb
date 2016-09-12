@@ -16,6 +16,11 @@ RSpec.describe 'Visitor can search by zip code', type: :feature do
 
       fill_in 'q', with: '80203'
       click_button 'Locate'
+
+      expect(page).to have_content('290 E Speer Blvd, Denver, CO 80203')
+      expect(page).to have_content('CADACHARGEPOINT')
+      expect(page).to have_content('6.0 miles')
+      expect(page).to have_content('ELEC')
     end
   end
 end
